@@ -17,7 +17,7 @@ Given I did not have time to write a proper setup.py the user MUST install via p
 - bson.json_util (the mongo-connector package may install the last two)
 
 Once those packages are installed, copy the kafka_doc_manager.py program into:
-/usr/lib/python2.7/site-packages/mongo_connector/doc_managers/
+```/usr/lib/python2.7/site-packages/mongo_connector/doc_managers/```
 
 To use this document manager create a command line similar to the following changing the Database and Collection names to match yours.  **DB Names and Collection names are case sensitive**:
 ```
