@@ -1,7 +1,7 @@
 #**Kafka Document Manager for mongo-connector**
 
 This Python 2.7 program runs against MongoDB, and extracts various MongoDB collections and imports those collections into Kafka topics
-I wrote this as we are migrating to using Elasticsearch as our primary data store due to the relational and searchable nature of Elasticsearch based data.
+ wrote this to facilitate pushing data into Kafka so that we can processes it in multiple places without duplicating the data.
 
 This document manager does NOT use batch sizes, but instead relies upon the Kafka plugin to block as needed to get data into Kafka.  This might have a detrimental effect on the speed of the plugin.
 
