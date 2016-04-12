@@ -32,6 +32,22 @@ mongo-connector -m <your_mongo_db_ip_here>:27017 -t <your_kafka_ip_here>:9092 -d
 
 Currently the way this doc manager is written, it is better to run mongo-connector once for each topic/db.collection from its own "topic" directory.  Running multiple instances from the same start directory seems to cause confusion in accessing the oplog tracking files.
 
+*One warning about fields that are timestamp fields in MongoDB.  This program uses a BSON to JSON converter from MongoDB that indents JSON by one level when converting time fields.  So instead of:*
+```
+{
+ "ts": timestamp
+}
+```
+*You will get:*
+```
+{
+ "ts":
+      {
+       "$date": timestamp
+      }
+}
+```
+
 Feel free to contact me on Git should you run into any errors (there might be a few as I don't consider myself a real developer, more of "hack it together" type).   There is no license to use the code I have published.
 
 A big thanks to the folks at @mongodb-labs/mongo-connector for the great work they did in creating the mongo-connector.
